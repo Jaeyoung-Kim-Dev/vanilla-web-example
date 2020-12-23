@@ -13,10 +13,11 @@ nav {
     @extend h1;
     list-style: none;
     display: flex;
+    max-width: 60%;
     justify-content: space-around;
   }
   a {
-    color: black;
+    color: $logoColor;
     text-decoration: none;
   }
 }

@@ -1,5 +1,5 @@
-@import "./nav";
 @import "./variables";
+@import "./nav";
 
 @mixin flexCenter($direction) {
   display: flex;
@@ -21,7 +21,8 @@ header {
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
   position: sticky;
   top: 0;
-  background: white;
+  background: $navBackgroundColor;
+  opacity: 0.7;
 }
 
 .logo {
@@ -33,7 +34,7 @@ header {
 
 section {
   @include flexCenter(column);
-  min-height: 90vh;
+  min-height: 100vh;
   h2 {
     font-size: 5rem;
     color: white;

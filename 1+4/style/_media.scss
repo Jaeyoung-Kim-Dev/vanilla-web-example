@@ -6,7 +6,7 @@
 
 @media screen and (max-width: 768px) {
   body {
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   .nav-links {
@@ -14,11 +14,11 @@
     right: 0px;
     height: 90vh;
     top: 10vh;
-    background: $backgroundColor;
+    background: $navBackgroundColor;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
+    width: 50%;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
     li {
