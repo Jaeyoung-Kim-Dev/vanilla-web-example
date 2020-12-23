@@ -1,0 +1,54 @@
+@import "./variables";
+@import "./nav";
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+
+header {
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  background: white;
+}
+
+section {
+  @include flexCenter(column);
+  min-height: 90vh;
+  h2 {
+    font-size: 5rem;
+    color: white;
+  }
+}
+
+.home {
+  background: $homeBackGround;
+}
+.project {
+  background: $projectBackGround;
+}
+.contact {
+  background: $contactBackGround;
+}
+
+.bubble {
+  position: absolute;
+  z-index: -2;
+  /* background: linear-gradient(to right top, #f46b45, #eea849); */
+  transform: scale(1.5);
+  transition: all 0.5s ease;
+}
+
+@import "./media";
