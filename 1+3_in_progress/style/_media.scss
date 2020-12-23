@@ -25,12 +25,10 @@
     width: 100%;
     flex-direction: column;
     clip-path: circle(100px at 90% -10%);
-    -webkit-clip-path: circle(100px at 90% -10%);
     transition: all 1s ease-out;
     pointer-events: none;
     &.open {
       clip-path: circle(1300px at 90% -10%);
-      -webkit-clip-path: circle(1300px at 90% -10%);
       pointer-events: all;
     }
     li {

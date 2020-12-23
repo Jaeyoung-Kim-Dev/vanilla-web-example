@@ -1,5 +1,5 @@
 nav {
-  min-height: 10vh;
+  height: 10vh;
   margin: auto;
   width: 90%;
   display: -webkit-box;
@@ -13,29 +13,23 @@ nav {
           justify-content: space-between;
 }
 
-nav h1, nav .nav-links {
+nav h1, nav ul {
   font-size: 1.5rem;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-nav .nav-links {
+nav ul {
+  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  list-style: none;
-  width: 50%;
-  height: 100%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-left: auto;
 }
 
-nav .nav-links li a {
+nav a {
   color: black;
   text-decoration: none;
 }
@@ -58,6 +52,13 @@ header {
   position: sticky;
   top: 0;
   background: white;
+}
+
+.logo {
+  color: #ccc5c5;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
 }
 
 section {
@@ -107,71 +108,95 @@ section h2 {
   transition: all 0.5s ease;
 }
 
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 60%;
+  }
+}
+
 @media screen and (max-width: 768px) {
-  .line {
-    width: 30px;
-    height: 4px;
-    background: black;
-    margin: 5px;
-  }
-  nav {
-    position: relative;
-  }
-  .hamburger {
-    position: absolute;
-    cursor: pointer;
-    right: 5%;
-    top: 50%;
-    -webkit-transform: translate(-5%, -50%);
-            transform: translate(-5%, -50%);
-    z-index: 2;
+  body {
+    overflow: hidden;
   }
   .nav-links {
-    position: fixed;
-    background: #5b78c7;
-    height: 100vh;
-    width: 100%;
+    position: absolute;
+    right: 0px;
+    height: 90vh;
+    top: 10vh;
+    background: #5d4954;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    clip-path: circle(100px at 90% -10%);
-    -webkit-clip-path: circle(100px at 90% -10%);
-    -webkit-transition: all 1s ease-out;
-    transition: all 1s ease-out;
-    pointer-events: none;
-  }
-  .nav-links.open {
-    clip-path: circle(1300px at 90% -10%);
-    -webkit-clip-path: circle(1300px at 90% -10%);
-    pointer-events: all;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 30%;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
   }
   .nav-links li {
     opacity: 0;
   }
-  .nav-links li a {
-    font-size: 25px;
+  .burger {
+    display: block;
+    position: absolute;
+    right: 5vw;
+    cursor: pointer;
   }
-  .nav-links li:nth-child(1) {
-    -webkit-transition: all 0.5 ease 0.2s;
-    transition: all 0.5 ease 0.2s;
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #ccc5c5;
+    margin: 5px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
   }
-  .nav-links li:nth-child(2) {
-    -webkit-transition: all 0.5 ease 0.4s;
-    transition: all 0.5 ease 0.4s;
+  .nav-active {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
-  .nav-links li:nth-child(3) {
-    -webkit-transition: all 0.5 ease 0.6s;
-    transition: all 0.5 ease 0.6s;
+  @-webkit-keyframes navLinkFade {
+    from {
+      opacity: 0;
+      -webkit-transform: translateX(50px);
+              transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+    }
   }
-  .nav-links li.fade {
-    opacity: 1;
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      -webkit-transform: translateX(50px);
+              transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+    }
   }
-  .landing {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .toggle .line1 {
+    -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+            transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    -webkit-transform: rotate(45deg) translate(-5px, -6px);
+            transform: rotate(45deg) translate(-5px, -6px);
   }
 }
 /*# sourceMappingURL=style.css.map */
