@@ -1,5 +1,6 @@
 @import "./variables";
 @import "./nav";
+@import "./hero";
 
 @mixin flexCenter($direction) {
   display: flex;
@@ -30,6 +31,16 @@ header {
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 20px;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to left, #ba7453, #d1a984);
+  z-index: -1;
 }
 
 section {
